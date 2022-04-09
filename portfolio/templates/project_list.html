@@ -3,14 +3,15 @@
 <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
 
 
-<div style="background: url(static/img/wood.jpg) ;background-size: cover;" ;  class="jumbotron bg-cover text-white">
-  <div class="container py-5 text-center">
-      <div class=jumbotron>
-        <h1 class="display-4 font-weight-bold">Welcome to my website.</h1>
-        <p class="font-italic mb-0">My name is Robert and I'm a data scientist as wel as a back-end developper.</p>
-        <p class="font-italic">I made this website to showcase some projects I've worked on in the past. Please feel free to contact me for anything.</p>
-        <a href="#" role="button" class="btn btn-primary px-5">LinkedIn</a>
-      </div>
+<div style="background: url(static/img/mountains.jpg) ;background-size: cover;" ;  class="jumbotron bg-cover text-white">
+  <div class="container container-header-align py-5">
+     
+        <h1 class="display-4 font-weight-bold left-aligned">My name is Robert.</h1>
+        <p class="mb-0 left-aligned">I'm a data scientist and a back-end developper.</p>
+        <p class="left-aligned">I made this website to showcase some projects I've worked on in the past. Please feel free to contact me for questions.</p>
+        <a href="https://www.linkedin.com/in/robert-marineau/" role="button" class="btn btn-primary px-5 btn-left-aligned">LinkedIn</a>
+        <a href="https://github.com/rm2631" role="button" class="btn btn-primary px-5 btn-left-aligned">GitHub</a>
+
   </div>
 </div>
 
@@ -37,8 +38,8 @@
               <div class="card">
                 <div class="card-body">
                   <h5 class="card-title">{{project.project_name}}</h5>
-                  <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                  <a href="{{project.github_url}}" class="btn btn-primary">See Github</a>
+                  <p class="card-text">{{project.project_description}}</p>
+                  <a href="{{project.github_url}}" class="btn btn-primary">See Repo</a>
                 </div>
               </div>
             </div>
