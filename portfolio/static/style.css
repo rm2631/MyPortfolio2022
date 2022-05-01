@@ -23,3 +23,17 @@
     top: 50%;
     transform: translateY(-50%);
 }
+
+.card {
+    height: 100%;
+}
+
+.card-button {
+    position: absolute;
+    bottom: 18px;
+    left: 18px;
+}
+
+.badge {
+    font-size: 90%;
+}

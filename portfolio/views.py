@@ -6,8 +6,6 @@ from django.utils import timezone
 # Create your views here.
 
 
-
-
 def index(request):
     return HttpResponse("Hello, world. You're at the polls index.")
 
@@ -18,3 +16,4 @@ class ProjectListView(generic.ListView):
 
     def get_queryset(self):
         return Project.objects.all()
+

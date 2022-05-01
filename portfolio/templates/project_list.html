@@ -1,53 +1,59 @@
 {% load static %}
+<script src="{% static 'app.js' %}"></script>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
 <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
 
 
-<div style="background: url(static/img/mountains.jpg) ;background-size: cover;" ;  class="jumbotron bg-cover text-white">
-  <div class="container container-header-align py-5">
-     
+<div style="background: url(static/img/mountains.jpg) ;background-size: cover;" ; class="jumbotron bg-cover text-white">
+    <div class="container container-header-align py-5">
+
         <h1 class="display-4 font-weight-bold left-aligned">My name is Robert.</h1>
         <p class="mb-0 left-aligned">I'm a data scientist and a back-end developper.</p>
         <p class="left-aligned">I made this website to showcase some projects I've worked on in the past. Please feel free to contact me for questions.</p>
         <a href="https://www.linkedin.com/in/robert-marineau/" role="button" class="btn btn-primary px-5 btn-left-aligned">LinkedIn</a>
-        <a href="https://github.com/rm2631" role="button" class="btn btn-primary px-5 btn-left-aligned">GitHub</a>
+        <a onclick="scrollProjects()" role="button" class="btn btn-primary px-5 btn-left-aligned">My Projects</a>
 
-  </div>
+    </div>
 </div>
 
 
-<div class="row">
-  <div class="col-3 mx-auto">
-      <div class="text-center">
-        <div class="bottom-buffer">
-          <h1>
-            My Projects
-          </h1>
+<div id="projectlist" class="row">
+    <div class="col-3 mx-auto">
+        <div class="text-center">
+            <div class="bottom-buffer">
+                <h1>
+                    My Projects
+                </h1>
+            </div>
         </div>
-      </div>
-  </div>
+    </div>
 </div>
 
 <div class="container">
-  {% block content %}
+    {% block content %}
     <ul>
-      <div class="row">
-        {% for project in project_list %}
-          <div class="col-sm-6">
-            <div class="bottom-buffer">
-              <div class="card">
-                <div class="card-body">
-                  <h5 class="card-title">{{project.project_name}}</h5>
-                  <p class="card-text">{{project.project_description}}</p>
-                  <a href="{{project.github_url}}" class="btn btn-primary">See Repo</a>
+        <div class="row">
+            {% for project in project_list %}
+            <div class="col-sm">
+                <div class="bottom-buffer">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">{{project.project_name}}</h5>
+                            {% for tech_tag in project.tech_tags.all %}
+                                <span class="badge badge-primary">
+                                    {{ tech_tag }}
+                                </span>
+                            {% endfor %}
+                            <p class="card-text">{{project.project_description}}</p>
+                            <a href="{{project.github_url}}" class="btn btn-primary card-button">See Repo</a>
+                        </div>
+                    </div>
                 </div>
-              </div>
             </div>
-          </div>
-        {% endfor %}
-      </div>
-    </ul> 
-  {% endblock %}
+            {% endfor %}
+        </div>
+    </ul>
+    {% endblock %}
 </div>
 
 
