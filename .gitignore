@@ -2,7 +2,8 @@
 
 # Ignore virtual environment
 .venv
-
+.vscode
+.vs
 
 # Ignore Mac system files
 .DS_store

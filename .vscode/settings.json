@@ -1,4 +1,0 @@
-{
-    "appService.defaultWebAppToDeploy": "/subscriptions/730818b1-f34a-44bf-b49b-8c5e6df78f1a/resourceGroups/appsvc_linux_centralus_basic/providers/Microsoft.Web/sites/robert-marineau",
-    "appService.deploySubpath": "."
-}

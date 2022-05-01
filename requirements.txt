@@ -1,3 +1,7 @@
-
 django
 whitenoise
+pyodbc
+mssql-django
+djangorestframework
+django-cors-headers
+python-dotenv
